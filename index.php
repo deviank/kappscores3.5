@@ -6,10 +6,10 @@
                 <a href="<?php the_permalink()?>"><?php the_title_attribute()?><?php the_title()?></a>
             </h2>
             <div>
-                <?php post_meta()?>
+                <?php kappscores_post_meta()?>
             </div>
             <div><?php the_excerpt();?></div>
-            <div><?php readmore_link()?></div>
+            <div><?php kappscores_readmore_link()?></div>
             <?php } ?>
             <?php the_posts_pagination()?>
         <?php } else { ?>
