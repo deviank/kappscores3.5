@@ -9,7 +9,7 @@
                 <?php post_meta()?>
             </div>
             <div><?php the_excerpt();?></div>
-            <a href="<?php echo get_the_permalink()?>" title="<?php the_title_attribute()?>">Read More <span class="u-screen-reader-text">About <?php the_title()?></span></a>
+            <div><?php readmore_link()?></div>
             <?php } ?>
             <?php the_posts_pagination()?>
         <?php } else { ?>
