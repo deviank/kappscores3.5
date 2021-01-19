@@ -13,6 +13,6 @@
             <?php } ?>
             <?php the_posts_pagination()?>
         <?php } else { ?>
-        <p>Sorry, there are no posts that match your criteria</p>
+        <p><?php _e('Sorry, there are no posts that match your criteria.', 'Kappscores') ?></p>
         <?php } ?>
 <?php get_footer();?>
