@@ -1,13 +1,13 @@
 <?php
 function kappscores_post_meta(){
-/* translators: %s: Post Date */
+/* translators: %s: Post Date*/
   printf(
 
     esc_html__( 'Posted on %s', 'Kappscores' ),
     '<a href="' . esc_url(get_permalink()) . '"><time datetime="' . esc_attr(get_the_date('c')) .'">' . esc_html(get_the_date()) . '</time></a> '
     
   );
-/* translators: %s: Post Author */
+/* translators: %s: Post Author*/
   printf(
 
     esc_html__( 'By %s', 'Kappscores'),
@@ -21,7 +21,7 @@ function kappscores_post_meta(){
 function kappscores_readmore_link(){
 
   echo '<a href="' . esc_url(get_permalink()) . '" title="' . the_title_attribute(['echo' => false]) . '">';
-/* translators: %s: Post Title */  
+/* translators: %s: Post Title*/  
   printf(
     wp_kses(
       __('Read More <span class="u-screen-reader-text">About %s</span>', 'Kappscores'),
