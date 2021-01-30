@@ -4,9 +4,10 @@ import sass from 'gulp-sass';
 
 const PRODUCTION = yargs.argv.prod;
 
-export const hello = (done) => {
-    console.log(PRODUCTION);
-    done();
+export const styles = () => {
+    return gulp.src('src/assets/scss/bundle.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('dist/assets/css'));
 
 }
 
