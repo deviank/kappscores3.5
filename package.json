@@ -19,7 +19,9 @@
     "url": "https://github.com/deviank/kappscores3.5/issues"
   },
   "homepage": "https://github.com/deviank/kappscores3.5#readme",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-sourcemaps": "^3.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
