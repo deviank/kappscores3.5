@@ -24,4 +24,8 @@ export const styles = () => {
 
 }
 
+export const watch = () => {
+    gulp.watch('src/assets/scss/**/*.scss', styles);
+}
+
 //export default hello;
