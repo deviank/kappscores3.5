@@ -11,4 +11,4 @@ function kappscores_admin_assets(){
 
 add_action( 'admin_enqueue_scripts', 'kappscores_admin_assets');
 
-?>
+?>exit
