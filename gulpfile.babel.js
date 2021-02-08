@@ -3,7 +3,8 @@ import yargs from 'yargs';
 import sass from 'gulp-sass';
 import cleanCSS from 'gulp-clean-css';
 import gulpif from 'gulp-if';
-import sourcemaps from 'gulp-sourcemaps'
+import sourcemaps from 'gulp-sourcemaps';
+import imagemin from 'gulp-imagemin';
 
 const PRODUCTION = yargs.argv.prod;
 
