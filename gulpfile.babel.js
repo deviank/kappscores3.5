@@ -12,6 +12,10 @@ const paths = {
     styles: {
         src: ['src/assets/scss/bundle.scss', 'src/assets/scss/admin.scss'],
         dest: 'dist/assets/css'       
+    },
+
+    images: {
+        src: 'src/assets/images/**/*.{jpg.jpeg.png,svg,gif}'
     }
 }
 
