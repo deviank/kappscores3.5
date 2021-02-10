@@ -51,6 +51,8 @@ export const copy = () => {
 
 export const watch = () => {
     gulp.watch('src/assets/scss/**/*.scss', styles);
+    gulp.watch(paths.images.src, images)
+    gulp.watch(paths.other.src, copy)
 }
 
 export const dev = gulp.series(clean, gulp.parallel(styles, images, copy), watch);
