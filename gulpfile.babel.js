@@ -5,7 +5,8 @@ import cleanCSS from 'gulp-clean-css';
 import gulpif from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
-import del from 'del'
+import del from 'del';
+import webpack from 'webpack-stream'
 
 const PRODUCTION = yargs.argv.prod;
 
@@ -20,6 +21,11 @@ const paths = {
     images: {
         src: 'src/assets/images/**/*.{jpg,jpeg,png,svg,gif}',
         dest: 'dist/assets/images'
+    },
+
+    scripts:{
+        src: 'src/assets/js/bundle.js',
+        dest: 'dist/assets/js'
     },
 
     other: {
@@ -42,6 +48,28 @@ export const images = () => {
     return gulp.src(paths.images.src)
     .pipe(gulpif(PRODUCTION, imagemin()))
     .pipe(gulp.dest(paths.images.dest));
+}
+
+export const scripts = () => {
+    return gulp.src(paths.scripts.src)
+        .pipe(webpack({
+            mode: 'none',
+            module: {
+                rules:[
+                    {
+                        test: /\.js$/,
+                        use:{
+                            loader: 'babel-loader',
+                            options:{
+                                presets:['@babel/preset-env']
+                            }
+                        }
+                    }
+
+                ]
+            }
+        }))
+        .pipe(gulp.dest(paths.scripts.dest));
 }
 
 export const copy = () => {
