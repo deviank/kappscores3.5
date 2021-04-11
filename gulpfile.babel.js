@@ -6,7 +6,9 @@ import gulpif from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
 import del from 'del';
-import webpack from 'webpack-stream'
+import webpack from 'webpack-stream';
+import uglify from 'gulp-uglify';
+import named from 'vinyl-named'
 
 const PRODUCTION = yargs.argv.prod;
 
@@ -52,6 +54,7 @@ export const images = () => {
 
 export const scripts = () => {
     return gulp.src(paths.scripts.src)
+        .pipe(named())
         .pipe(webpack({
             mode: 'none',
             module: {
@@ -69,10 +72,12 @@ export const scripts = () => {
                 ]
             },
             output: {
-                filename: 'bundle.js'
+                filename: '[name].js'
             },
             devtool: !PRODUCTION ? '#inline-source-map' :false
         }))
+        .pipe(gulpif(PRODUCTION, uglify()))
+
         .pipe(gulp.dest(paths.scripts.dest));
 }
 
@@ -83,11 +88,12 @@ export const copy = () => {
 
 export const watch = () => {
     gulp.watch('src/assets/scss/**/*.scss', styles);
+    gulp.watch('src/assets/js/**/*.js', scripts);
     gulp.watch(paths.images.src, images)
     gulp.watch(paths.other.src, copy)
 }
 
-export const dev = gulp.series(clean, gulp.parallel(styles, images, copy), watch);
-export const build = gulp.series(clean, gulp.parallel(styles, images, copy));
+export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), watch);
+export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));
 
 export default dev;
