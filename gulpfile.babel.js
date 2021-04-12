@@ -8,9 +8,18 @@ import imagemin from 'gulp-imagemin';
 import del from 'del';
 import webpack from 'webpack-stream';
 import uglify from 'gulp-uglify';
-import named from 'vinyl-named'
+import named from 'vinyl-named';
+import browserSync from 'browser-sync'
 
+const server = browserSync.create();
 const PRODUCTION = yargs.argv.prod;
+
+export const serve = (done){
+    server.init({
+        proxy: "http://localhost/wordpressTheme"
+    });
+    done()
+}
 
 export const clean = () => del(['dist']); 
 
