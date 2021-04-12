@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/deviank/kappscores3.5#readme",
   "dependencies": {
-    "gulp-sourcemaps": "^3.0.0"
+    "gulp-sourcemaps": "^3.0.0",
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
