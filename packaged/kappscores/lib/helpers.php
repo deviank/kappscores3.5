@@ -3,14 +3,14 @@ function kappscores_post_meta(){
 /* translators: %s: Post Date*/
   printf(
 
-    esc_html__( 'Posted on %s', 'Kappscores' ),
+    esc_html__( 'Posted on %s', 'kappscores' ),
     '<a href="' . esc_url(get_permalink()) . '"><time datetime="' . esc_attr(get_the_date('c')) .'">' . esc_html(get_the_date()) . '</time></a> '
     
   );
 /* translators: %s: Post Author*/
   printf(
 
-    esc_html__( 'By %s', 'Kappscores'),
+    esc_html__( 'By %s', 'kappscores'),
     '<a href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a>'
 
   );
@@ -24,7 +24,7 @@ function kappscores_readmore_link(){
 /* translators: %s: Post Title*/  
   printf(
     wp_kses(
-      __('Read More <span class="u-screen-reader-text">About %s</span>', 'Kappscores'),
+      __('Read More <span class="u-screen-reader-text">About %s</span>', 'kappscores'),
       [
         'span' => [
           'class' => []
@@ -34,6 +34,8 @@ function kappscores_readmore_link(){
         get_the_title()
       );
   
+
+
   echo '</a>';
 
 }

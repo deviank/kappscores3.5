@@ -6,13 +6,13 @@
                 <a href="<?php the_permalink()?>"><?php the_title_attribute()?><?php the_title()?></a>
             </h2>
             <div>
-                <?php kappscores_post_meta()?>
+                <?php _themename_post_meta()?>
             </div>
             <div><?php the_excerpt();?></div>
-            <div><?php kappscores_readmore_link()?></div>
+            <div><?php _themename_readmore_link()?></div>
             <?php } ?>
             <?php the_posts_pagination()?>
         <?php } else { ?>
-        <p><?php _e('Sorry, there are no posts that match your criteria.', 'Kappscores') ?></p>
+        <p><?php _e('Sorry, there are no posts that match your criteria.', '_themename') ?></p>
         <?php } ?>
 <?php get_footer();?>
