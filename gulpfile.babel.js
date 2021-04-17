@@ -57,7 +57,7 @@ export const styles = () => {
     .pipe(gulpif(PRODUCTION, cleanCSS({compatibility: 'ie8'})))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(gulp.dest(paths.styles.dest))
-    .pipe(server.stream())
+    .pipe(server.stream());
     
 
 }
@@ -110,7 +110,7 @@ export const watch = () => {
     gulp.watch(paths.other.src, gulp.series(copy, reload));
 }
 
-export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), watch);
+export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);
 export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));
 
 export default dev;
