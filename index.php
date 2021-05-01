@@ -13,9 +13,9 @@
                                 <div class="c-post__meta">
                                     <?php _themename_post_meta()?>
                                 </div>
-                                    <div class="c-post__excerpt">
-                                        <?php the_excerpt();?>
-                                    </div>
+                                <div class="c-post__excerpt">
+                                    <?php the_excerpt();?>
+                                </div>
                                 <div>
                                     <?php _themename_readmore_link()?>
                                 </div>
