@@ -22,8 +22,12 @@
   },
   "homepage": "https://github.com/deviank/kappscores3.5#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "gulp-sourcemaps": "^3.0.0",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "normalize.css": "^8.0.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -43,6 +47,8 @@
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.1.0",
+    "normalize-css": "^2.3.1",
+    "normalize-scss": "^7.0.1",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^6.1.2",
     "yargs": "^16.2.0"
