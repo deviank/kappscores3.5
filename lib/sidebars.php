@@ -12,5 +12,30 @@ function _themename_sidebar_widgets(){
     ));
 }
 
+$footer_layout = '3,3,3,3';
+$columns = explode(',', $footer_layout);
+$footer_bg = 'dark';
+$widget_theme = '';
+
+if($footer_bg == 'light'){
+    $widget_theme = 'c-footer--dark';
+}  else {
+    $widget_theme = 'c-footer--light';
+}
+
+
+foreach ($columns as $i => $column) {
+    register_sidebar(array(
+        'id' => 'footer-sidebar-' . ($i + 1),
+        'name' => sprintf(esc_html__( 'Footer Widgets Column %s', '_themename'), $i + 1),
+        'description' => esc_html__( 'Footer Widgets', '_themename'),
+        'before_widget' => '<section id="%1s" class="c-sidebar-widget u-margin-bottom-20 %2s">',
+        'after-widget' => '</section>',
+        'before-title' =>  '<h5>',
+        'after-title' => '</h5>'
+    ));
+}
+
 add_action('widgets_init', '_themename_sidebar_widgets');
+
 ?>
