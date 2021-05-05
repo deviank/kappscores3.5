@@ -13,7 +13,7 @@ add_action( '_themename_after_pagination', 'after_pagination');
 
 
 function no_post_text($text){
-    return $text . 'jsdddlfsd';
+    return $text ;
 }
 add_filter( '_themename_no_posts_text', 'no_post_text' );
 
