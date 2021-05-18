@@ -8,6 +8,19 @@ function _themename_register_menus(){
 
 add_action( 'init', '_themename_register_menus' );
 
+//Code for when menu has drop down menus for accessibility.
+
+function _themename_aria_hasdropdown($atts, $item, $args){
+    if($args->theme_location == 'main-menu'){
+        if(in_array('menu-item-has-children', $item -> classes)){
+            $atts['aria-haspopup'] = 'true';
+            $atts['aria-expanded'] = 'false';
+        }
+    }
+        return $atts;
+}
+add_filter( 'nav_menu_link_attributes', '_themename_aria_hasdropdown', 10, 3);
+
 function _themename_dropdown_icon($title, $item, $args, $depth){
     if($args->theme_location == 'main-menu'){
         if(in_array('menu-item-has-children', $item -> classes)){
