@@ -1,4 +1,6 @@
-import $ from 'jquery';
+alert(true);
+
+import $ from 'jquery'
 
 $('.c-navigation').on('mouseenter', '.menu-item-has-children', (e) => {
     $(e.currentTarget).addClass('open');
