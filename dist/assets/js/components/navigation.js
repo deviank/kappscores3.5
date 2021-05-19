@@ -1,5 +1,3 @@
-alert(true);
-
 import $ from 'jquery'
 
 $('.c-navigation').on('mouseenter', '.menu-item-has-children', (e) => {
