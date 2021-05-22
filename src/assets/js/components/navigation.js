@@ -1,6 +1,9 @@
 import $ from 'jquery';
 
 $('.c-navigation').on('mouseenter', '.menu-item-has-children', (e) => {
+    if(!$(e.currentTarget).parents('.sub-menu').length){
+        $('.menu > .menu-item.open').find('> a > .menu-button').trigger('click');
+    }
     $(e.currentTarget).addClass('open');
 }).on('mouseleave', '.menu-item-has-children', (e) => {
     $(e.currentTarget).removeClass('open');
@@ -10,6 +13,7 @@ $('.c-navigation').on('mouseenter', '.menu-item-has-children', (e) => {
 
 $('.c-navigation').on('click', '.menu .menu-button', (e) => {
     e.preventDefault();
+    e.stopPropagation();
     let menu_button = $(e.currentTarget);
     let menu_link = menu_button.parent();
     let menu_item = menu_link.parent();
@@ -28,4 +32,10 @@ $('.c-navigation').on('click', '.menu .menu-button', (e) => {
 
     }
 
-})
+});
+
+$(document).click((e) => {
+    if($('.menu-item.open').length){
+        $('.menu > .menu-item.open > a > .menu-button').trigger('click');
+    }
+})                              
