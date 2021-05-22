@@ -24,7 +24,7 @@ $('.c-navigation').on('click', '.menu .menu-button', (e) => {
         menu_button.find('.menu-button-show').attr('aria-hidden', 'false');
         menu_button.find('.menu-button-hide').attr('aria-hidden', 'true');
     } else {
-        menu_item.siblings('.open').find('>a>.menu-button').trigger('click')
+        menu_item.siblings('.open').find('> a >.menu-button').trigger('click')
         menu_item.addClass('open');
         menu_link.attr('aria-expanded', 'true');
         menu_button.find('.menu-button-show').attr('aria-hidden', 'true');
