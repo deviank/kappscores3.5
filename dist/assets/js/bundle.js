@@ -1,6 +1,7 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
+import $ from 'jquery';
+import './components/slider';
+import './components/navigation';
+ar installedModules = {};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
