@@ -11,7 +11,8 @@ function _themename_customize_register($wp_customize){
 
     $wp_customize->add_setting('_themename_site_info', array(
         'default' => '',
-        'sanitize_callback' => '_themename_sanitize_site_info'
+        'sanitize_callback' => '_themename_sanitize_site_info',
+        'transport' => 'postMessage'
     ));
 
     $wp_customize->add_control('_themename_site_info', array(
