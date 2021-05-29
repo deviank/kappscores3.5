@@ -1,7 +1,6 @@
-import $ from 'jquery';
-import './components/slider';
-import './components/navigation';
-ar installedModules = {};
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
