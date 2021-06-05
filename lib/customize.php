@@ -12,7 +12,7 @@ function _themename_customize_register($wp_customize){
         }
     ));
 
-    $wp_customize->selective_refresh->add_partial('_themename_footer_partial', array(
+    $wp_customize->selective_refresh->add_partial('_themename_footer_partial', '_themename_footer_layout', array(
         'settings' => array('_themename_site_info'),
         'selector' => '.c-site-info',
         'container_inclusive' => true,
@@ -37,6 +37,19 @@ function _themename_customize_register($wp_customize){
     $wp_customize->add_control('_themename_site_info', array(
         'type' => 'text',
         'label' => esc_html__( 'Site Info', '_themename'),
+        'section' => '_themename_footer_options'
+
+    ));
+
+    $wp_customize->add_setting('_themename_footer_layout', array(
+        'default' => '3,3,3,3',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control('_themename_footer_layout', array(
+        'type' => 'text',
+        'label' => esc_html__( 'Footer Layout', '_themename'),
         'section' => '_themename_footer_options'
 
     ));
