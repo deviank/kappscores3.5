@@ -13,7 +13,7 @@ function _themename_customize_register($wp_customize){
     ));
 
     $wp_customize->selective_refresh->add_partial('_themename_footer_partial', array(
-        'settings' => array('_themename_site_info'),
+        'settings' => array('_themename_site_info', '_themename_footer_layout', '_themename_footer_bg'),
         'selector' => '.c-site-info',
         'container_inclusive' => true,
         'render_callback' => function(){
@@ -41,6 +41,35 @@ function _themename_customize_register($wp_customize){
 
     ));
 
+    $wp_customize->add_setting('_themename_footer_bg', array(
+        'default' => 'dark',
+        'transport' => 'postMessage',
+        'sanitize_callback' => '_themename_sanitize_footer_bg'
+    ));
+
+    $wp_customize->add_control('_themename_footer_bg', array(
+        'type' => 'select',
+        'label' => esc_html__( 'Footer Background', '_themename' ),
+        'choices' => array(
+            'light' => esc_html__( 'Light', '_themename' ),
+            'dark' => esc_html__( 'Dark', '_themename' ),
+        ),
+        'section' => '_themename_footer_options'
+    ));
+
+    $wp_customize->add_setting('_themename_footer_layout', array(
+        'default' => '3,3,3,3',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field',
+        'validate_callback' => '_themename_validate_footer_layout'
+    ));
+
+    $wp_customize->add_control('_themename_footer_layout', array(
+        'type' => 'text',
+        'label' => esc_html__( 'Footer Layout', '_themename' ),
+        'section' => '_themename_footer_options'
+    ));
+
 }
 
 add_action('customize_register', '_themename_customize_register');
@@ -51,6 +80,14 @@ function _themename_sanitize_site_info($input){
         'title' => array()
     ));
     return wp_kses( $input, $allowed );
+}
+
+function _themename_sanitize_footer_bg($input) {
+    $valid = array('light', 'dark');
+    if( in_array($input, $valid, true) ) {
+        return $input;
+    }
+    return 'dark';
 }
 
 ?>
