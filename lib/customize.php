@@ -13,10 +13,11 @@ function _themename_customize_register($wp_customize){
     ));
 
     $wp_customize->selective_refresh->add_partial('_themename_footer_partial', array(
-        'settings' => array('_themename_site_info', '_themename_footer_layout', '_themename_footer_bg'),
-        'selector' => '.c-site-info',
-        'container_inclusive' => true,
+        'settings' => array('_themename_footer_bg'),
+        'selector' => '#footer',
+        'container_inclusive' => false,
         'render_callback' => function(){
+            get_template_part( 'template-parts/footer/widgets');
             get_template_part( 'template-parts/footer/info');
         }
     ));
