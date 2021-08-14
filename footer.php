@@ -11,6 +11,6 @@
 
 <style>
     body {
-        background-color: <?php echo get_theme_mod('_themename_accent_colour')?>
+        background-color: <?php echo get_theme_mod('_themename_accent_colour')?>;
     }
 </style>
