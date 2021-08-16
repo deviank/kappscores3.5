@@ -10,6 +10,7 @@
             <?php the_excerpt();?>
         </div>
         <div>
-            <?php _themename_readmore_link()?>
+            <?php _themename_readmore_link();?>
+            <?php echo _themename_delete_post();?>
         </div>
 </article>
