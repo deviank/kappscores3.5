@@ -1,7 +1,7 @@
 <article
     <?php post_class("c-post u-margin-bottom-20");?>>
         <h2 class="c-post__title">
-            <a href="<?php the_permalink()?>"><?php the_title_attribute()?><?php the_title()?></a>
+            <a href="<?php the_permalink()?>"><?php the_title()?></a>
         </h2>
         <div class="c-post__meta">
             <?php _themename_post_meta()?>
