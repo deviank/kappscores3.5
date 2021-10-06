@@ -1,6 +1,6 @@
 <?php
 
-function _themename_add_meta_boxe(){
+function _themename_add_meta_box(){
     add_meta_box( 
         '_themename_post_metabox',
         'Post Settings',
@@ -11,7 +11,7 @@ function _themename_add_meta_boxe(){
     );
 }
 
-add_action( 'add_meta_boxes', '_themename_add_meta_boxe');
+add_action( 'add_meta_boxes', '_themename_add_meta_box');
 
 function _themename_post_metabox_html($post){
     $subtitle = get_post_meta($post -> ID, '__themename_post_subtitle', true);
@@ -37,7 +37,7 @@ function _themename_save_post_metabox( $post_id, $post ){
 
     $edit_cap = get_post_type_object( $post->post_type )->cap->edit_post;
 
-    if(current_user_can( $edit_cap, $post_id )){
+    if(!current_user_can( $edit_cap, $post_id )){
         return;
     }
 
