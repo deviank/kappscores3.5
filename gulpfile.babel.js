@@ -120,11 +120,17 @@ export const watch = () => {
 }
 
 export const compress = () => {
-    return gulp.src(paths.package.src)
-        .pipe(gulpif((file) => (file.relative.split('.').pop() !== 'zip'), replace('_themename', info.name)))
-        .pipe(zip(`${info.name}.zip`))
-        .pipe(gulp.dest(paths.package.dest));
-}
+    return gulp
+      .src(paths.package.src)
+      .pipe(
+        gulpif(
+          file => file.relative.split(".").pop() !== "zip",
+          replace("_themename", info.name)
+        )
+      )
+      .pipe(zip(`${info.name}.zip`))
+      .pipe(gulp.dest(paths.package.dest));
+  };
 
 export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);
 export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));
