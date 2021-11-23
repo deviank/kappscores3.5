@@ -33,11 +33,7 @@ function _themename_readmore_link(){
         ),
         get_the_title()
       );
-  
-
-
   echo '</a>';
-
 }
 
 function _themename_delete_post() {
@@ -49,6 +45,14 @@ function _themename_delete_post() {
   if(current_user_can( 'delete_post', get_the_ID() )) {
       return "<a href='" . esc_url($url) . "'>" . esc_html__( 'Delete Post', '_themename' ) . "</a>";
   }
+}
+
+function _themename_meta($id, $key, $default){
+  $value = get_post_meta( $id, $key, true );
+  if(!$value && $default){
+    return $default;
+  }
+  return $value;
 }
 
 ?>
