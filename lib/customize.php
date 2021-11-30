@@ -17,7 +17,7 @@ function _themename_customize_register($wp_customize){
       $wp_customize->add_section('_themename_single_blog_options', array(
         'title' => esc_html__( 'Single Blog Options', '_themename' ),
         'description' => esc_html__( 'You can change single blog options from here.', '_themename' ),
-        //'active_callback' => '_themename_show_single_blog_section'
+        'active_callback' => '_themename_show_single_blog_section'
     ));
 
     $wp_customize->add_setting('_themename_display_author_info', array(
