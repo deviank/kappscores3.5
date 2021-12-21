@@ -28,8 +28,8 @@ if( post_password_required() ) {
                 wp_list_comments( array(
                     'short_ping' => false,
                     'avatar_size' => 50,
-                    'reply_text' => 'hello',
-                    //'callback' => '_themename_comment_callback'
+                    //'reply_text' => 'hello',
+                    'callback' => '_themename_comment_callback'
                 ) );
             ?>
         </ul>
@@ -37,5 +37,10 @@ if( post_password_required() ) {
 
     <?php } ?>
 
+    <?php
+    if( ! comments_open() && get_comments_number()) { ?>
+        <p class="c-comments__closed"><?php esc_html_e( 'Comments are closed for this post', '_themename' ) ?></p>
+    <?php } ?>
 
+    <?php comment_form() ?>
 </div>
