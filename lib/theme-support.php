@@ -11,6 +11,8 @@ function _themename_theme_support(){
         'flex-height' => true,
         'flex-width' => true,
     ) );
+    add_theme_support('align-wide');
+    add_image_size('_themename-blog-image', 1200, 0);
 }
 
 add_action( 'after_setup_theme', '_themename_theme_support' );
