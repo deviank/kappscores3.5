@@ -11,12 +11,43 @@ require_once('lib/comment-callback.php');
 
 //require_once('lib/metaboxes.php');
 
-function _themename_button($atts = [], $content = null, $tag = '') {
+// function _themename_button($atts = [], $content = null, $tag = '') {
+//     extract(shortcode_atts([
+//         'color' => 'red',
+//         'text' => 'text'
+//     ], $atts, $tag));
+    
+//     return '<button class="_themename_button" style="background-color: ' . esc_attr($color) . '">' . do_shortcode($content) . '</button>';
+// }
+// add_shortcode('_themename_button', '_themename_button');
+
+
+// function _themename_icon($atts) {
+//     extract(shortcode_atts([
+//         'icon' => ''
+//     ], $atts));
+    
+//     return '<i class="' . esc_attr($icon) . '" aria-hidden></i>';
+// }
+// add_shortcode('_themename_icon', '_themename_icon');
+
+function _themename_button($atts = [], $content = null){
     extract(shortcode_atts([
         'color' => 'red',
         'text' => 'text'
-    ], $atts, $tag));
-    
-    return '<button class="_themename_button" style="background-color: ' . esc_attr($color) . '">' . do_shortcode($content) . '</button>';
+    ], $atts));
+
+    return '<button style="background-color: ' . esc_attr($color) . '">' .  esc_html($content) . '</button>';
 }
-add_shortcode('_themename_button', '_themename_button');
+
+add_shortcode( '_themename_button', '_themename_button' );
+
+function _themename_icon($atts){
+    extract(shortcode_atts([
+        'icon' => '',
+    ], $atts));
+
+    return '<i class="' . esc_attr($icon) . '" aria-hidden ></i>';
+}
+
+add_shortcode( '_themename_icon', '_themename_icon' );

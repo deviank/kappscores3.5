@@ -50,7 +50,8 @@ const paths = {
 
     plugins: {
         src: [
-          "../../plugins/_themename-metaboxes/packaged/*"
+          "../../plugins/_themename-metaboxes/packaged/*",
+          "../../plugins/_themename-shortcodes/packaged/*"
         ],
         dest: ["lib/plugins"]
       },
