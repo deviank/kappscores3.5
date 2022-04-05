@@ -12,6 +12,34 @@ function kappscores_customize_register($wp_customize){
         }
     ));
 
+      /*##################  SINGLE SETTINGS ########################*/
+
+      $wp_customize->add_section('kappscores_single_blog_options', array(
+        'title' => esc_html__( 'Single Blog Options', 'kappscores' ),
+        'description' => esc_html__( 'You can change single blog options from here.', 'kappscores' ),
+        'active_callback' => 'kappscores_show_single_blog_section'
+    ));
+
+    $wp_customize->add_setting('kappscores_display_author_info', array(
+        'default' => true,
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'kappscores_sanitize_checkbox'
+    ));
+
+    $wp_customize->add_control('kappscores_display_author_info', array(
+        'type' => 'checkbox',
+        'label' => esc_html__( 'Show Author Info', 'kappscores' ),
+        'section' => 'kappscores_single_blog_options'
+    ));
+
+    function kappscores_sanitize_checkbox( $checked ) {
+        return (isset($checked) && $checked === true) ? true : false;
+    }
+
+    function kappscores_show_single_blog_section() {
+        global $post;
+        return is_single() && $post->post_type === 'post';
+    }
 
 
     /*######################################GENERAL SETTINGS#######################################*/

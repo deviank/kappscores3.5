@@ -33,11 +33,7 @@ function kappscores_readmore_link(){
         ),
         get_the_title()
       );
-  
-
-
   echo '</a>';
-
 }
 
 function kappscores_delete_post() {
@@ -49,6 +45,14 @@ function kappscores_delete_post() {
   if(current_user_can( 'delete_post', get_the_ID() )) {
       return "<a href='" . esc_url($url) . "'>" . esc_html__( 'Delete Post', 'kappscores' ) . "</a>";
   }
+}
+
+function kappscores_meta($id, $key, $default){
+  $value = get_post_meta( $id, $key, true );
+  if(!$value && $default){
+    return $default;
+  }
+  return $value;
 }
 
 ?>

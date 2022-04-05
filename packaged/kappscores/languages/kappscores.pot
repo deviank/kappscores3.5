@@ -1,0 +1,225 @@
+# Copyright (C) 2022 kappscores
+# This file is distributed under the same license as the kappscores package.
+msgid ""
+msgstr ""
+"Project-Id-Version: kappscores\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Econdig: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: kappscores\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:6
+msgid "Nothing found here, maybe you can try to search?"
+msgstr ""
+
+#: archive-kappscores_portfolio.php:12, taxonomy-kappscores_project_type.php:12, taxonomy-kappscores_skills.php:12
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#. translators: %s is the number of posts
+#: author.php:19, template-parts/single/author.php:27
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1 is number of comments and 2 is post title
+#: comments.php:14
+msgid "%1$s Reply to \"%2$s\""
+msgid_plural "%1$s Replies to \"%2$s\""
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:42
+msgid "Comments are closed for this post"
+msgstr ""
+
+#: header.php:10
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:26
+msgid "Main Navigation"
+msgstr ""
+
+#: lib/comment-callback.php:9
+msgid "Edit Comment"
+msgstr ""
+
+#: lib/comment-callback.php:20
+msgid "%s ago"
+msgstr ""
+
+#: lib/comment-callback.php:26
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: lib/customize.php:18
+msgid "Single Blog Options"
+msgstr ""
+
+#: lib/customize.php:19
+msgid "You can change single blog options from here."
+msgstr ""
+
+#: lib/customize.php:31
+msgid "Show Author Info"
+msgstr ""
+
+#: lib/customize.php:48
+msgid "General Options"
+msgstr ""
+
+#: lib/customize.php:49
+msgid "You can change general options from here."
+msgstr ""
+
+#: lib/customize.php:59
+msgid "Accent Color"
+msgstr ""
+
+#: lib/customize.php:77
+msgid "Footer Options"
+msgstr ""
+
+#: lib/customize.php:78
+msgid "You can change footer options from here."
+msgstr ""
+
+#: lib/customize.php:91
+msgid "Site Info"
+msgstr ""
+
+#: lib/customize.php:104
+msgid "Footer Background"
+msgstr ""
+
+#: lib/customize.php:106
+msgid "Light"
+msgstr ""
+
+#: lib/customize.php:107
+msgid "Dark"
+msgstr ""
+
+#: lib/customize.php:121
+msgid "Footer Layout"
+msgstr ""
+
+#: lib/customize.php:132
+msgid "Footer layout is invalid"
+msgstr ""
+
+#: lib/helpers.php:6
+msgid "Posted on %s"
+msgstr ""
+
+#: lib/helpers.php:13
+msgid "By %s"
+msgstr ""
+
+#: lib/helpers.php:27
+msgid "Read More <span class=\"u-screen-reader-text\">About %s</span>"
+msgstr ""
+
+#: lib/helpers.php:46
+msgid "Delete Post"
+msgstr ""
+
+#: lib/navigation.php:4
+msgid "Main Menu"
+msgstr ""
+
+#: lib/navigation.php:5
+msgid "Footer Menu"
+msgstr ""
+
+#: lib/navigation.php:27
+msgid "Show %s submenu"
+msgstr ""
+
+#: lib/navigation.php:28
+msgid "Hide %s submenu"
+msgstr ""
+
+#: lib/sidebars.php:6
+msgid "Primary Sidebar"
+msgstr ""
+
+#: lib/sidebars.php:7
+msgid "This sidebar appears in the blog posts page"
+msgstr ""
+
+#: lib/sidebars.php:30
+msgid "Footer Widgets Column %s"
+msgstr ""
+
+#: lib/sidebars.php:31
+msgid "Footer Widgets"
+msgstr ""
+
+#: page-templates/page-blank.php:3
+msgid "Blank"
+msgstr ""
+
+#: page-templates/page-full.php:3
+msgid "Full Width Page"
+msgstr ""
+
+#: search.php:8
+msgid "Search results for: %s"
+msgstr ""
+
+#: searchform.php:3
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:4
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:6
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: template-parts/post/content-none.php:1
+msgid "Sorry, there are no posts that match your criteria."
+msgstr ""
+
+#. translators: used betweeen categories
+#: template-parts/post/footer.php:6
+msgid ", "
+msgstr ""
+
+#. translators: %s is the categories list
+#: template-parts/post/footer.php:8
+msgid "Posted in %s"
+msgstr ""
+
+#: template-parts/single/author.php:2
+msgid "About The Author"
+msgstr ""
+
+#: template-parts/single/navigation.php:8
+msgid "Post Navigation"
+msgstr ""
+
+#: template-parts/single/navigation.php:20
+msgid "Previous Post"
+msgstr ""
+
+#: template-parts/single/navigation.php:39
+msgid "Next Post"
+msgstr ""

@@ -60,6 +60,19 @@ function _themename_customize_register($wp_customize){
         'section' => '_themename_general_options',
     )));
 
+    $wp_customize->add_setting( '_themename_portfolio_slug', array(
+		'default'           => 'portfolio',
+		'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( '_themename_portfolio_slug', array(
+		'type'    => 'text',
+        'label'    => esc_html__( 'Portfolio Slug', '_themename' ),
+        'description' => esc_html__( 'Will appear in the archive url', '_themename' ),
+		'section'  => '_themename_general_options',
+    ));
+
 
     /*######################################FOOTER SETTINGS#######################################*/
 
