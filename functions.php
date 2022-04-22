@@ -8,6 +8,7 @@ require_once('lib/navigation.php');
 require_once('lib/delete-post.php');
 require_once('lib/include-plugins.php');
 require_once('lib/comment-callback.php');
+require_once('lib/most-recent-widget.php');
 
 add_filter('register_post_type_args', '_themename_filter_portfolio', 10, 2);
 function _themename_filter_portfolio($args, $post_type) {
@@ -35,3 +36,10 @@ function _themename_customize_save_after() {
         set_theme_mod('_themename_flush_flag', true);
     }
 }
+
+function _themename_load_textdomain() {
+    load_theme_textdomain('_themename', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', '_themename_load_textdomain');
+
+?>
