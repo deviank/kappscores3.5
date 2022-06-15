@@ -41,7 +41,7 @@
     "gulp-zip": "^5.0.2",
     "sass": "^1.43.4",
     "vinyl-named": "^1.1.0",
-    "webpack-stream": "^5.2.1",
+    "webpack-stream": "^7.0.0",
     "yargs": "^15.4.1"
   },
   "dependencies": {

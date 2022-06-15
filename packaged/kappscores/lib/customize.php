@@ -60,6 +60,19 @@ function kappscores_customize_register($wp_customize){
         'section' => 'kappscores_general_options',
     )));
 
+    $wp_customize->add_setting( 'kappscores_portfolio_slug', array(
+		'default'           => 'portfolio',
+		'transport'         => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    $wp_customize->add_control( 'kappscores_portfolio_slug', array(
+		'type'    => 'text',
+        'label'    => esc_html__( 'Portfolio Slug', 'kappscores' ),
+        'description' => esc_html__( 'Will appear in the archive url', 'kappscores' ),
+		'section'  => 'kappscores_general_options',
+    ));
+
 
     /*######################################FOOTER SETTINGS#######################################*/
 

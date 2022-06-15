@@ -42,7 +42,7 @@ const paths = {
     src: "src/assets/images/**/*.{jpg,jpeg,png,svg,gif}",
     dest: "dist/assets/images"
   },
-  scrips: {
+  scripts: {
     src: [
       "src/assets/js/bundle.js",
       "src/assets/js/admin.js",
@@ -118,7 +118,7 @@ export const delete_replaced_filenames = () => {
 
 export const serve = done => {
   server.init({
-    proxy: "http://localhost:8888/myfirsttheme"
+    proxy: "http://localhost/wordpressTheme/"
   });
   done();
 };
@@ -149,7 +149,7 @@ export const images = () => {
 };
 
 export const watch = () => {
-  gulp.watch("src/assets/scss/**/*.scss", styles);
+  gulp.watch("src/assets/scss/**/*.scss", gulp.series(styles, reload));
   gulp.watch("src/assets/js/**/*.js", gulp.series(scripts, reload));
   gulp.watch("**/*.php", reload);
   gulp.watch(paths.images.src, gulp.series(images, reload));
@@ -166,7 +166,7 @@ export const copyPlugins = () => {
 
 export const scripts = () => {
   return gulp
-    .src(paths.scrips.src)
+    .src(paths.scripts.src)
     .pipe(named())
     .pipe(
       webpack({
@@ -193,7 +193,7 @@ export const scripts = () => {
         mode: PRODUCTION ? 'production' : 'development'
       })
     )
-    .pipe(gulp.dest(paths.scrips.dest));
+    .pipe(gulp.dest(paths.scripts.dest));
 };
 
 export const compress = () => {
