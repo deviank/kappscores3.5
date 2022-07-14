@@ -1,4 +1,7 @@
 <?php
+
+//Named locations in admin area
+
 function _themename_register_menus(){
     register_nav_menus(array(
         'main-menu' => esc_html__('Main Menu', '_themename'),
